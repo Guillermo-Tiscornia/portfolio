@@ -1,0 +1,127 @@
+/* Fondo general */
+.portfolio-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+/* Contenedor del título */
+.header {
+  width: 100%;
+  max-width: 800px;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding-right: 15px;
+}
+
+.title-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: flex-end; /* Alinea el título a la derecha */
+  padding-right: 20px;
+}
+
+/* Título principal */
+.title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: .5%;
+}
+
+/* Contenedor de los proyectos */
+.content {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Galería */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Tarjetas de imagen */
+.image-card {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+}
+
+/* Títulos de cada proyecto alineados a la izquierda */
+.image-title {
+  font-size: .9rem;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 5px;
+  margin-left: 3%;
+  color:#666;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Descripción debajo de cada imagen */
+.image-description {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: left;
+  margin-top: 5px;
+  margin-left: 3%;
+}
+
+
+@media (max-width: 768px) {
+  .portfolio-wrapper {
+    padding: 5px; /* Reduce el padding lateral en móviles */
+  }
+
+  .header {
+    padding-right: 10px;
+  }
+
+  .content {
+    width: 100%;
+    max-width: none; /* Ocupa todo el ancho disponible */
+    border-radius: 0; /* Elimina bordes redondeados para una apariencia más natural */
+    padding: 15px; /* Reduce el padding interior */
+  }
+
+  .gallery {
+    gap: 15px; /* Reduce el espacio entre proyectos en móvil */
+  }
+}
+
+/* Contenedor de tags */
+.tags {
+  margin-top: 8px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+/* Estilo de cada tag */
+.tag {
+  background-color: #e0e0e0;
+  color: #333;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
