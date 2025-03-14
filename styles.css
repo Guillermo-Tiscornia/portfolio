@@ -20,14 +20,16 @@ h1 {
 
 /* Estilo del contenedor de la galería */
 .portfolio-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
     padding: 20px;
 }
 
 .portfolio-item img {
     width: 100%;
+    max-width: 600px; /* Limita el tamaño máximo para pantallas grandes */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -54,10 +56,18 @@ footer p {
     h1 {
         font-size: 2em;
     }
+
+    .portfolio-item img {
+        max-width: 90%; /* Las imágenes ocuparán más espacio en pantallas pequeñas */
+    }
 }
 
 @media (max-width: 480px) {
     h1 {
         font-size: 1.5em;
+    }
+
+    .portfolio-item img {
+        max-width: 100%; /* En pantallas muy pequeñas, las imágenes ocuparán todo el ancho */
     }
 }
