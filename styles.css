@@ -1,73 +1,90 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Arial", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f8f8f8;
+    color: #333;
 }
 
 header {
-    background-color: #333;
+    background-color: #222;
     color: white;
     text-align: center;
     padding: 20px;
 }
 
 h1 {
-    margin: 0;
     font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-/* Estilo del contenedor de la galería */
+/* Botones de filtrado */
+nav {
+    text-align: center;
+    padding: 15px;
+}
+
+.filter {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.filter:hover {
+    background-color: #666;
+}
+
+/* Contenedor de proyectos */
 .portfolio-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     padding: 20px;
 }
 
-.portfolio-item img {
-    width: 100%;
-    max-width: 600px; /* Limita el tamaño máximo para pantallas grandes */
-    height: auto;
+.portfolio-item {
+    background: white;
+    padding: 15px;
+    width: 300px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.portfolio-item h2 {
+    font-size: 1.2em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item p {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
 }
 
 /* Estilos de pie de página */
 footer {
-    background-color: #333;
+    background-color: #222;
     color: white;
     text-align: center;
     padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-}
-
-/* Responsividad para pantallas pequeñas */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    .portfolio-item img {
-        max-width: 90%; /* Las imágenes ocuparán más espacio en pantallas pequeñas */
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5em;
-    }
-
-    .portfolio-item img {
-        max-width: 100%; /* En pantallas muy pequeñas, las imágenes ocuparán todo el ancho */
-    }
 }
