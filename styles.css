@@ -8,16 +8,18 @@ body {
 }
 
 header {
-    background-color: #222;
-    color: white;
-    text-align: center;
+    background-color: #ddd; /* Gris claro */
+    color: black;
+    text-align: left;
     padding: 20px;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 1.25em; /* Mitad del tamaño anterior */
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: none;
+    margin: 0;
+    padding-left: 20px;
 }
 
 /* Botones de filtrado */
@@ -44,8 +46,8 @@ nav {
 /* Contenedor de proyectos */
 .portfolio-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
     padding: 20px;
 }
@@ -53,16 +55,18 @@ nav {
 .portfolio-item {
     background: white;
     padding: 15px;
-    width: 300px;
+    width: 100%;
+    max-width: 800px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left;
 }
 
 .portfolio-item h2 {
     font-size: 1.2em;
     color: #222;
     margin-bottom: 10px;
+    text-align: right;
 }
 
 .portfolio-item img {
@@ -77,6 +81,25 @@ nav {
     color: #666;
     margin-top: 10px;
 }
+
+/* Tags de proyectos */
+.tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tag {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+}
+
+.tag.residencial { background-color: #2a9d8f; }
+.tag.comercial { background-color: #e76f51; }
+.tag.paisajismo { background-color: #f4a261; }
 
 /* Estilos de pie de página */
 footer {
