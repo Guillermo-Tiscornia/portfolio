@@ -8,10 +8,10 @@ body {
 }
 
 header {
-    background-color: #ddd; /* Gris claro */
+    background-color: transparent; /* Sin fondo */
     color: black;
     text-align: right;
-    padding: 20px;
+    padding: 10px 20px; /* Menos padding para reducir la separación */
 }
 
 h1 {
@@ -27,8 +27,8 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 10px; /* Reduce la separación entre elementos */
+    padding: 10px;
 }
 
 .portfolio-item {
