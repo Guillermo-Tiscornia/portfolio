@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arq. Guillermo Tiscornia - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -59,7 +65,7 @@
                     <img src="${proyecto.imagen}" alt="${proyecto.titulo}">
                     <p>${proyecto.descripcion}</p>
                     <div class="tags">
-                        ${proyecto.tags.map(tag => `<span class="tag">${tag}</span>`).join(" ")}
+                        ${proyecto.tags.map(tag => `<span class="tag" data-tag="${tag}">${tag}</span>`).join(" ")}
                     </div>
                 `;
                 container.appendChild(projectElement);
@@ -70,10 +76,18 @@
         document.addEventListener("DOMContentLoaded", function () {
             renderProyectos();
             
-            // Aplicar colores aleatorios a los tags
-            const colors = ["#E63946", "#F4A261", "#2A9D8F", "#264653", "#8A5A44", "#457B9D", "#1D3557", "#6D597A", "#B5838D", "#A8DADC"];
-            document.querySelectorAll(".tag").forEach((tag, index) => {
-                tag.style.backgroundColor = colors[index % colors.length];
+            // Paleta de colores pastel con más contraste
+            const colors = ["#FF9E80", "#FF6F61", "#FFB74D", "#DCE775", "#64B5F6", "#BA68C8", "#4DB6AC", "#F06292", "#81C784"];
+            const assignedColors = {};
+            let colorIndex = 0;
+            
+            document.querySelectorAll(".tag").forEach(tag => {
+                const tagName = tag.innerText.trim();
+                if (!assignedColors[tagName]) {
+                    assignedColors[tagName] = colors[colorIndex % colors.length];
+                    colorIndex++;
+                }
+                tag.style.backgroundColor = assignedColors[tagName];
             });
         });
     </script>
