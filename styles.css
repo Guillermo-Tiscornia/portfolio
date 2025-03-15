@@ -30,17 +30,19 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* Reduce la separación entre elementos */
-    padding: 10px;
+    gap: 20px; /* Mayor separación entre elementos */
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto; /* Centrar con más margen lateral */
 }
 
 .portfolio-item {
     background: white;
-    padding: 15px;
+    padding: 20px;
     width: 100%;
     max-width: 800px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Mantener el sombreado solo en el posteo */
     text-align: left;
 }
 
@@ -55,7 +57,7 @@ h1 {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: none; /* Eliminar sombra de las imágenes */
 }
 
 .portfolio-item p {
@@ -81,7 +83,6 @@ h1 {
     color: white;
     background-color: var(--tag-color, #555); /* Color por defecto */
 }
-
 
 /* Estilos de pie de página */
 footer {
