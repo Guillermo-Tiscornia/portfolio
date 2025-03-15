@@ -11,34 +11,39 @@
         <h1>Arq. Guillermo Tiscornia</h1>
     </header>
 
-    <nav>
-        <button class="filter" data-filter="all">Todos</button>
-        <button class="filter" data-filter="residencial">Residencial</button>
-        <button class="filter" data-filter="comercial">Comercial</button>
-        <button class="filter" data-filter="paisajismo">Paisajismo</button>
-    </nav>
-
     <main>
         <div class="portfolio-container">
             <div class="portfolio-item" data-category="residencial">
                 <h2>Proyecto Residencial 1</h2>
                 <img src="imagenes/proyecto1.jpg" alt="Proyecto 1">
                 <p>Una casa moderna con diseño sostenible.</p>
+                <div class="tags">
+                    <span class="tag residencial">Residencial</span>
+                </div>
             </div>
             <div class="portfolio-item" data-category="comercial">
                 <h2>Proyecto Comercial 2</h2>
                 <img src="imagenes/proyecto2.jpg" alt="Proyecto 2">
                 <p>Un espacio de coworking con iluminación natural.</p>
+                <div class="tags">
+                    <span class="tag comercial">Comercial</span>
+                </div>
             </div>
             <div class="portfolio-item" data-category="paisajismo">
                 <h2>Proyecto Paisajismo 3</h2>
                 <img src="imagenes/proyecto3.jpg" alt="Proyecto 3">
                 <p>Un parque urbano que integra naturaleza y arquitectura.</p>
+                <div class="tags">
+                    <span class="tag paisajismo">Paisajismo</span>
+                </div>
             </div>
             <div class="portfolio-item" data-category="residencial">
                 <h2>Proyecto Residencial 4</h2>
                 <img src="imagenes/proyecto4.jpg" alt="Proyecto 4">
                 <p>Vivienda minimalista con espacios abiertos.</p>
+                <div class="tags">
+                    <span class="tag residencial">Residencial</span>
+                </div>
             </div>
         </div>
     </main>
@@ -54,20 +59,6 @@
             const items = Array.from(container.children);
             items.sort(() => Math.random() - 0.5);
             items.forEach(item => container.appendChild(item));
-        });
-
-        // Filtrado por categoría
-        document.querySelectorAll(".filter").forEach(button => {
-            button.addEventListener("click", function () {
-                const category = this.getAttribute("data-filter");
-                document.querySelectorAll(".portfolio-item").forEach(item => {
-                    if (category === "all" || item.getAttribute("data-category") === category) {
-                        item.style.display = "block";
-                    } else {
-                        item.style.display = "none";
-                    }
-                });
-            });
         });
     </script>
 </body>

@@ -10,7 +10,7 @@ body {
 header {
     background-color: #ddd; /* Gris claro */
     color: black;
-    text-align: left;
+    text-align: right;
     padding: 20px;
 }
 
@@ -19,28 +19,7 @@ h1 {
     font-weight: bold;
     text-transform: none;
     margin: 0;
-    padding-left: 20px;
-}
-
-/* Botones de filtrado */
-nav {
-    text-align: center;
-    padding: 15px;
-}
-
-.filter {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    background-color: #444;
-    color: white;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
-}
-
-.filter:hover {
-    background-color: #666;
+    padding-right: 20px;
 }
 
 /* Contenedor de proyectos */
@@ -66,7 +45,7 @@ nav {
     font-size: 1.2em;
     color: #222;
     margin-bottom: 10px;
-    text-align: right;
+    text-align: left;
 }
 
 .portfolio-item img {
@@ -87,12 +66,13 @@ nav {
     display: flex;
     gap: 10px;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .tag {
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 0.8em;
+    font-size: 0.9em; /* Igual que la descripción */
     font-weight: bold;
     color: white;
 }
@@ -103,11 +83,10 @@ nav {
 
 /* Estilos de pie de página */
 footer {
-    background-color: #222;
-    color: white;
+    background-color: #eee; /* Gris claro como el header */
+    color: black;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+    padding: 5px;
+    position: relative;
     width: 100%;
 }
