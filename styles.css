@@ -10,19 +10,21 @@ body {
 }
 
 header {
-    background-color: transparent; /* Sin fondo */
-    color: #444; /* Gris oscuro */
+    background-color: transparent;
+    color: #444;
     text-align: right;
-    padding: 5px 5px; /* Menos padding para reducir la separación */
+    padding: 5px 5px;
 }
 
 h1 {
-    font-size: 1.25em; /* Mitad del tamaño anterior */
+    font-size: 1.25em;
     font-weight: bold;
     text-transform: none;
-    margin: 20px 0 5px 0; /* Aumentar el margen superior al doble y reducir el inferior a la mitad */
+    margin: 5px 0 5px 0; /* Reducir la separación con el primer posteo a 1/3 */
     padding-right: 20px;
-    color: #333; /* Gris oscuro */
+    color: transparent;
+    -webkit-text-stroke: 1px #333; /* Contorno gris */
+    background: transparent;
 }
 
 /* Contenedor de proyectos */
@@ -30,10 +32,10 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Mayor separación entre elementos */
+    gap: 20px;
     padding: 20px;
     max-width: 1000px;
-    margin: 0 auto; /* Centrar con más margen lateral */
+    margin: 0 auto;
 }
 
 .portfolio-item {
@@ -42,15 +44,21 @@ h1 {
     width: 100%;
     max-width: 800px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Mantener el sombreado solo en el posteo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
-    margin: 0 40px; /* Duplicar los márgenes laterales de los proyectos */
+    margin: 0 320px; /* Ampliar al doble los márgenes laterales */
+}
+
+@media (max-width: 768px) {
+    .portfolio-item {
+        margin: 0 80px; /* Ajustar márgenes en móviles al doble del anterior */
+    }
 }
 
 .portfolio-item h2 {
-    font-size: 0.9375em; /* 75% del tamaño del título principal */
-    color: #666; /* Gris ligeramente más claro */
-    margin-bottom: 5px; /* Reducir a la mitad el margen inferior */
+    font-size: 0.9375em;
+    color: #6f1313;
+    margin-bottom: 5px;
     text-align: left;
 }
 
@@ -58,12 +66,12 @@ h1 {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: none; /* Eliminar sombra de las imágenes */
+    box-shadow: none;
 }
 
 .portfolio-item p {
     font-size: 0.9em;
-    color: #666;
+    color: #942d2d;
     margin-top: 10px;
 }
 
@@ -77,17 +85,18 @@ h1 {
 }
 
 .tag {
-    padding: 5px 10px;
+    padding: 3px 7px; /* Reducido al 70% del tamaño */
     border-radius: 5px;
-    font-size: 0.9em; /* Igual que la descripción */
+    font-size: 0.63em; /* Reducido al 70% del tamaño actual */
     font-weight: bold;
-    color: white;
-    background-color: var(--tag-color, #555); /* Color por defecto */
+    color: #ddd; /* Gris más claro */
+    background-color: transparent; /* Sin fondo */
+    border: 1px solid #ddd; /* Bordes en gris más claro */
 }
 
 /* Estilos de pie de página */
 footer {
-    background-color: #eee; /* Gris claro como el header */
+    background-color: #eee;
     color: black;
     text-align: center;
     padding: 5px;

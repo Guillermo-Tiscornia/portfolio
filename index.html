@@ -6,11 +6,6 @@
     <title>Arq. Guillermo Tiscornia - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -19,7 +14,7 @@
 
     <main>
         <div class="portfolio-container" id="portfolio-container">
-            <!-- Aquí se agregarán dinámicamente los proyectos -->
+            <!-- Los proyectos se generan dinámicamente -->
         </div>
     </main>
 
@@ -28,25 +23,24 @@
     </footer>
 
     <script>
-        // Lista de proyectos
         const proyectos = [
             {
                 titulo: "Vivienda unifamiliar / Maldonado",
                 descripcion: "Estudio de temperatura operativa en invierno",
                 imagen: "imagenes/proyecto1.jpg",
-                tags: ["Simulación energética","LadybugTools","Energy+"]
+                tags: ["Simulación energética", "LadybugTools", "Energy+"]
             },
             {
                 titulo: "Terminal Buquebus / CABA",
                 descripcion: "Estudio de temperatura operativa en verano",
                 imagen: "imagenes/proyecto2.jpg",
-                tags: ["Simulación energética","LadybugTools","Energy+"]
+                tags: ["Simulación energética", "LadybugTools", "Energy+"]
             },
             {
                 titulo: "Torres Udaondo / CABA",
                 descripcion: "Impacto ambiental, asoleamiento mínimo en fachadas",
                 imagen: "imagenes/proyecto3.jpg",
-                tags: ["Impacto ambiental","LadybugTools"]
+                tags: ["Impacto ambiental", "LadybugTools"]
             }
         ];
 
@@ -54,10 +48,7 @@
             const container = document.getElementById("portfolio-container");
             container.innerHTML = "";
             
-            // Mezclar los proyectos aleatoriamente
-            const proyectosAleatorios = proyectos.sort(() => Math.random() - 0.5);
-            
-            proyectosAleatorios.forEach(proyecto => {
+            proyectos.forEach(proyecto => {
                 const projectElement = document.createElement("div");
                 projectElement.classList.add("portfolio-item");
                 projectElement.innerHTML = `
@@ -65,31 +56,14 @@
                     <img src="${proyecto.imagen}" alt="${proyecto.titulo}">
                     <p>${proyecto.descripcion}</p>
                     <div class="tags">
-                        ${proyecto.tags.map(tag => `<span class="tag" data-tag="${tag}">${tag}</span>`).join(" ")}
+                        ${proyecto.tags.map(tag => `<span class="tag">${tag}</span>`).join(" ")}
                     </div>
                 `;
                 container.appendChild(projectElement);
             });
         }
 
-        // Renderiza los proyectos al cargar la página
-        document.addEventListener("DOMContentLoaded", function () {
-            renderProyectos();
-            
-            // Paleta de colores pastel con más contraste
-            const colors = ["#FF9E80", "#FF6F61", "#FFB74D", "#DCE775", "#64B5F6", "#BA68C8", "#4DB6AC", "#F06292", "#81C784"];
-            const assignedColors = {};
-            let colorIndex = 0;
-            
-            document.querySelectorAll(".tag").forEach(tag => {
-                const tagName = tag.innerText.trim();
-                if (!assignedColors[tagName]) {
-                    assignedColors[tagName] = colors[colorIndex % colors.length];
-                    colorIndex++;
-                }
-                tag.style.backgroundColor = assignedColors[tagName];
-            });
-        });
+        document.addEventListener("DOMContentLoaded", renderProyectos);
     </script>
 </body>
 </html>
