@@ -9,7 +9,7 @@ body {
 
 header {
     background-color: transparent; /* Sin fondo */
-    color: black;
+    color: #444; /* Gris oscuro */
     text-align: right;
     padding: 10px 20px; /* Menos padding para reducir la separación */
 }
@@ -20,6 +20,7 @@ h1 {
     text-transform: none;
     margin: 0;
     padding-right: 20px;
+    color: #333; /* Gris oscuro */
 }
 
 /* Contenedor de proyectos */
@@ -42,8 +43,8 @@ h1 {
 }
 
 .portfolio-item h2 {
-    font-size: 1.2em;
-    color: #222;
+    font-size: 0.9375em; /* 75% del tamaño del título principal */
+    color: #666; /* Gris ligeramente más claro */
     margin-bottom: 10px;
     text-align: left;
 }
@@ -67,6 +68,7 @@ h1 {
     gap: 10px;
     margin-top: 10px;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .tag {
@@ -75,11 +77,13 @@ h1 {
     font-size: 0.9em; /* Igual que la descripción */
     font-weight: bold;
     color: white;
+    background-color: #555; /* Color por defecto para tags sin categoría específica */
 }
 
-.tag.residencial { background-color: #2a9d8f; }
-.tag.comercial { background-color: #e76f51; }
-.tag.paisajismo { background-color: #f4a261; }
+.tag.simulacion-energetica { background-color: #2a9d8f; }
+.tag.ladybugtools { background-color: #e76f51; }
+.tag.energyplus { background-color: #f4a261; }
+.tag.impacto-ambiental { background-color: #264653; }
 
 /* Estilos de pie de página */
 footer {
