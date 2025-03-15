@@ -12,39 +12,8 @@
     </header>
 
     <main>
-        <div class="portfolio-container">
-            <div class="portfolio-item" data-category="residencial">
-                <h2>Proyecto Residencial 1</h2>
-                <img src="imagenes/proyecto1.jpg" alt="Proyecto 1">
-                <p>Una casa moderna con diseño sostenible.</p>
-                <div class="tags">
-                    <span class="tag residencial">Residencial</span>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="comercial">
-                <h2>Proyecto Comercial 2</h2>
-                <img src="imagenes/proyecto2.jpg" alt="Proyecto 2">
-                <p>Un espacio de coworking con iluminación natural.</p>
-                <div class="tags">
-                    <span class="tag comercial">Comercial</span>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="paisajismo">
-                <h2>Proyecto Paisajismo 3</h2>
-                <img src="imagenes/proyecto3.jpg" alt="Proyecto 3">
-                <p>Un parque urbano que integra naturaleza y arquitectura.</p>
-                <div class="tags">
-                    <span class="tag paisajismo">Paisajismo</span>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="residencial">
-                <h2>Proyecto Residencial 4</h2>
-                <img src="imagenes/proyecto4.jpg" alt="Proyecto 4">
-                <p>Vivienda minimalista con espacios abiertos.</p>
-                <div class="tags">
-                    <span class="tag residencial">Residencial</span>
-                </div>
-            </div>
+        <div class="portfolio-container" id="portfolio-container">
+            <!-- Aquí se agregarán dinámicamente los proyectos -->
         </div>
     </main>
 
@@ -53,13 +22,52 @@
     </footer>
 
     <script>
-        // Reordenar proyectos aleatoriamente al cargar la página
-        document.addEventListener("DOMContentLoaded", function () {
-            const container = document.querySelector(".portfolio-container");
-            const items = Array.from(container.children);
-            items.sort(() => Math.random() - 0.5);
-            items.forEach(item => container.appendChild(item));
-        });
+        // Lista de proyectos
+        const proyectos = [
+            {
+                titulo: "Proyecto Residencial 1",
+                descripcion: "Una casa moderna con diseño sostenible.",
+                imagen: "imagenes/proyecto1.jpg",
+                tags: ["Residencial"]
+            },
+            {
+                titulo: "Proyecto Comercial 2",
+                descripcion: "Un espacio de coworking con iluminación natural.",
+                imagen: "imagenes/proyecto2.jpg",
+                tags: ["Comercial"]
+            },
+            {
+                titulo: "Proyecto Paisajismo 3",
+                descripcion: "Un parque urbano que integra naturaleza y arquitectura.",
+                imagen: "imagenes/proyecto3.jpg",
+                tags: ["Paisajismo"]
+            }
+        ];
+
+        function renderProyectos() {
+            const container = document.getElementById("portfolio-container");
+            container.innerHTML = "";
+            
+            // Mezclar los proyectos aleatoriamente
+            const proyectosAleatorios = proyectos.sort(() => Math.random() - 0.5);
+            
+            proyectosAleatorios.forEach(proyecto => {
+                const projectElement = document.createElement("div");
+                projectElement.classList.add("portfolio-item");
+                projectElement.innerHTML = `
+                    <h2>${proyecto.titulo}</h2>
+                    <img src="${proyecto.imagen}" alt="${proyecto.titulo}">
+                    <p>${proyecto.descripcion}</p>
+                    <div class="tags">
+                        ${proyecto.tags.map(tag => `<span class="tag ${tag.toLowerCase()}">${tag}</span>`).join(" ")}
+                    </div>
+                `;
+                container.appendChild(projectElement);
+            });
+        }
+
+        // Renderiza los proyectos al cargar la página
+        document.addEventListener("DOMContentLoaded", renderProyectos);
     </script>
 </body>
 </html>
