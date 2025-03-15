@@ -13,14 +13,14 @@ header {
     background-color: transparent; /* Sin fondo */
     color: #444; /* Gris oscuro */
     text-align: right;
-    padding: 10px 20px; /* Menos padding para reducir la separación */
+    padding: 5px 5px; /* Menos padding para reducir la separación */
 }
 
 h1 {
     font-size: 1.25em; /* Mitad del tamaño anterior */
     font-weight: bold;
     text-transform: none;
-    margin: 0;
+    margin: 20px 0 5px 0; /* Aumentar el margen superior al doble y reducir el inferior a la mitad */
     padding-right: 20px;
     color: #333; /* Gris oscuro */
 }
@@ -44,12 +44,13 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Mantener el sombreado solo en el posteo */
     text-align: left;
+    margin: 0 40px; /* Duplicar los márgenes laterales de los proyectos */
 }
 
 .portfolio-item h2 {
     font-size: 0.9375em; /* 75% del tamaño del título principal */
     color: #666; /* Gris ligeramente más claro */
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Reducir a la mitad el margen inferior */
     text-align: left;
 }
 
