@@ -1,6 +1,8 @@
 /* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Neue+Haas+Unica:wght@300;400;700&display=swap');
+
 body {
-    font-family: "Arial", sans-serif;
+    font-family: 'Neue Haas Unica', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
@@ -77,13 +79,9 @@ h1 {
     font-size: 0.9em; /* Igual que la descripción */
     font-weight: bold;
     color: white;
-    background-color: #555; /* Color por defecto para tags sin categoría específica */
+    background-color: var(--tag-color, #555); /* Color por defecto */
 }
 
-.tag.simulacion-energetica { background-color: #2a9d8f; }
-.tag.ladybugtools { background-color: #e76f51; }
-.tag.energyplus { background-color: #f4a261; }
-.tag.impacto-ambiental { background-color: #264653; }
 
 /* Estilos de pie de página */
 footer {

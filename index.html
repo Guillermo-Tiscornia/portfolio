@@ -59,7 +59,7 @@
                     <img src="${proyecto.imagen}" alt="${proyecto.titulo}">
                     <p>${proyecto.descripcion}</p>
                     <div class="tags">
-                        ${proyecto.tags.map(tag => `<span class="tag ${tag.toLowerCase()}">${tag}</span>`).join(" ")}
+                        ${proyecto.tags.map(tag => `<span class="tag">${tag}</span>`).join(" ")}
                     </div>
                 `;
                 container.appendChild(projectElement);
@@ -67,7 +67,15 @@
         }
 
         // Renderiza los proyectos al cargar la página
-        document.addEventListener("DOMContentLoaded", renderProyectos);
+        document.addEventListener("DOMContentLoaded", function () {
+            renderProyectos();
+            
+            // Aplicar colores aleatorios a los tags
+            const colors = ["#E63946", "#F4A261", "#2A9D8F", "#264653", "#8A5A44", "#457B9D", "#1D3557", "#6D597A", "#B5838D", "#A8DADC"];
+            document.querySelectorAll(".tag").forEach((tag, index) => {
+                tag.style.backgroundColor = colors[index % colors.length];
+            });
+        });
     </script>
 </body>
 </html>
