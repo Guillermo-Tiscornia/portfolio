@@ -27,38 +27,32 @@
             {
                 titulo: "Vivienda unifamiliar / Maldonado",
                 descripcion: "Estudio de temperatura operativa en invierno",
-                imagen: "imagenes/proyecto1.jpg",
+                imagenes: ["imagenes/proyecto1_1.jpg", "imagenes/proyecto1_2.jpg"],
                 tags: ["Simulación energética", "LadybugTools", "Energy+"]
             },
             {
                 titulo: "Terminal Buquebus / CABA",
                 descripcion: "Estudio de temperatura operativa en verano",
-                imagen: "imagenes/proyecto2.jpg",
+                imagenes: ["imagenes/proyecto2_1.jpg", "imagenes/proyecto2_2.jpg"],
                 tags: ["Simulación energética", "LadybugTools", "Energy+"]
             },
             {
                 titulo: "Torres Udaondo / CABA",
                 descripcion: "Impacto ambiental, asoleamiento mínimo en fachadas",
-                imagen: "imagenes/proyecto3.jpg",
+                imagenes: ["imagenes/proyecto3_1.jpg", "imagenes/proyecto3_2.jpg"],
                 tags: ["Impacto ambiental", "LadybugTools"]
             },
             {
                 titulo: "Torre Nila / Vcte. López",
                 descripcion: "Estudio de radiación en fachada",
-                imagen: "imagenes/proyecto4.jpg",
+                imagenes: ["imagenes/proyecto4_1.jpg", "imagenes/proyecto4_2.jpg"],
                 tags: ["Simulación energética", "LadybugTools", "Radiance"]
             },
             {
                 titulo: "Sunday Home, El Cósmico / Marfa, Texas",
                 descripcion: "Estudio de autonomía espacial diurna",
-                imagen: "imagenes/proyecto5.jpg",
+                imagenes: ["imagenes/proyecto5_1.jpg", "imagenes/proyecto5_2.jpg"],
                 tags: ["Simulación energética", "LadybugTools", "Leed"]
-            },
-            {
-                titulo: "Invernadero / Austin, Texas",
-                descripcion: "Temperatura operativa en relación a la opacidad de la cubierta",
-                imagen: "imagenes/proyecto6.jpg",
-                tags: ["Simulación energética", "LadybugTools", "Energy+"]
             }
         ];
 
@@ -78,9 +72,17 @@
             proyectos.forEach(proyecto => {
                 const projectElement = document.createElement("div");
                 projectElement.classList.add("portfolio-item");
+
+                // Generar imágenes dinámicamente
+                const imagenesHTML = proyecto.imagenes.map(img => 
+                    `<img src="${img}" alt="${proyecto.titulo}">`
+                ).join("");
+
                 projectElement.innerHTML = `
                     <h2>${proyecto.titulo}</h2>
-                    <img src="${proyecto.imagen}" alt="${proyecto.titulo}">
+                    <div class="portfolio-images">
+                        ${imagenesHTML}
+                    </div>
                     <p>${proyecto.descripcion}</p>
                     <div class="tags">
                         ${proyecto.tags.map(tag => `<span class="tag">${tag}</span>`).join(" ")}
