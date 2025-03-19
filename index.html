@@ -22,6 +22,12 @@
         <p>&copy; 2025 Arq. Guillermo Tiscornia</p>
     </footer>
 
+    <!-- Modal para imagen en pantalla completa -->
+    <div id="fullscreen-modal" class="fullscreen-modal">
+        <img id="fullscreen-image" src="" alt="Imagen en pantalla completa">
+        <span id="close-modal">&times;</span>
+    </div>
+
     <script>
         const proyectos = [
             {
@@ -73,15 +79,14 @@
             const container = document.getElementById("portfolio-container");
             container.innerHTML = "";
 
-            shuffleArray(proyectos); // Mezclar los proyectos antes de renderizar
+            shuffleArray(proyectos);
 
             proyectos.forEach(proyecto => {
                 const projectElement = document.createElement("div");
                 projectElement.classList.add("portfolio-item");
 
-                // Generar imágenes dinámicamente
                 const imagenesHTML = proyecto.imagenes.map(img => 
-                    `<img src="${img}" alt="${proyecto.titulo}">`
+                    `<img src="${img}" alt="${proyecto.titulo}" class="clickable-image">`
                 ).join("");
 
                 projectElement.innerHTML = `
@@ -96,9 +101,29 @@
                 `;
                 container.appendChild(projectElement);
             });
+
+            // Agregar evento de click para visualizar en pantalla completa
+            document.querySelectorAll(".clickable-image").forEach(img => {
+                img.addEventListener("click", function () {
+                    const modal = document.getElementById("fullscreen-modal");
+                    const modalImg = document.getElementById("fullscreen-image");
+                    modalImg.src = this.src;
+                    modal.style.display = "flex";
+                });
+            });
         }
 
         document.addEventListener("DOMContentLoaded", renderProyectos);
+
+        document.getElementById("close-modal").addEventListener("click", () => {
+            document.getElementById("fullscreen-modal").style.display = "none";
+        });
+
+        document.getElementById("fullscreen-modal").addEventListener("click", (event) => {
+            if (event.target === document.getElementById("fullscreen-modal")) {
+                document.getElementById("fullscreen-modal").style.display = "none";
+            }
+        });
     </script>
 </body>
 </html>
