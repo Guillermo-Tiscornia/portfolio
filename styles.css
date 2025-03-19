@@ -137,7 +137,7 @@ main {
 
 #close-modal {
     position: absolute;
-    top: 20px;
+    top: 60px; /* Ajuste para que no quede tan arriba en móviles */
     right: 20px;
     font-size: 30px;
     color: white;
