@@ -9,6 +9,7 @@ html, body {
     background-color: #f8f8f8;
     color: #333;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
 }
 
 header {
@@ -71,6 +72,8 @@ main {
     height: auto;
     border-radius: 8px;
     cursor: pointer;
+    max-height: 70vh;
+    object-fit: contain;
 }
 
 /* Ajuste para pantallas pequeñas */
@@ -127,6 +130,8 @@ main {
     background: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .fullscreen-modal img {
@@ -137,11 +142,14 @@ main {
 
 #close-modal {
     position: absolute;
-    top: 60px; /* Ajuste para que no quede tan arriba en móviles */
-    right: 20px;
+    top: 15px; /* Ajuste para que siempre se vea bien en móviles */
+    right: 15px;
     font-size: 30px;
     color: white;
     cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 /* Estilos de pie de página */
