@@ -133,3 +133,15 @@ h1 {
     color: white;
     cursor: pointer;
 }
+
+/* Estilos de pie de página */
+footer {
+    background-color: #eee;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
